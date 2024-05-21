@@ -42,6 +42,7 @@ app/crud/uploads/*
 !app/crud/uploads/19-melclen-joy-s-corporal.jpg
 !app/crud/uploads/20-mickaela-janelle-s-dura.jpg
 !app/crud/uploads/no-avatar.jpg
+!app/crud/uploads/cmon.gif
 !app/crud/dist
 /cypress/videos/
 /cypress/screenshots/
