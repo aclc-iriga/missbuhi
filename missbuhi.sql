@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2024 at 05:48 PM
+-- Generation Time: May 21, 2024 at 08:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -274,13 +274,14 @@ CREATE TABLE `judges` (
 --
 
 INSERT INTO `judges` (`id`, `number`, `name`, `avatar`, `username`, `password`, `active_portion`, `called_at`, `pinged_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Judge 01', 'no-avatar.jpg', 'judge01', 'judge01', NULL, NULL, NULL, '2023-04-06 13:58:11', '2024-05-13 15:43:10'),
+(1, 1, 'Judge 01', 'no-avatar.jpg', 'judge01', 'judge01', NULL, NULL, NULL, '2023-04-06 13:58:11', '2024-05-21 06:06:45'),
 (2, 2, 'Judge 02', 'no-avatar.jpg', 'judge02', 'judge02', NULL, NULL, NULL, '2023-04-06 13:58:28', '2023-04-06 13:58:28'),
 (3, 3, 'Judge 03', 'no-avatar.jpg', 'judge03', 'judge03', NULL, NULL, NULL, '2023-04-06 13:58:42', '2023-04-06 13:58:42'),
 (4, 4, 'Judge 04', 'no-avatar.jpg', 'judge04', 'judge04', NULL, NULL, NULL, '2023-04-06 13:59:26', '2023-04-06 13:59:26'),
 (5, 5, 'Judge 05', 'no-avatar.jpg', 'judge05', 'judge05', NULL, NULL, NULL, '2023-04-06 14:00:00', '2023-04-06 14:00:00'),
 (6, 6, 'Judge 06', 'no-avatar.jpg', 'judge06', 'judge06', NULL, NULL, NULL, '2024-05-13 13:49:13', '2024-05-13 13:49:13'),
-(7, 7, 'Judge 07', 'no-avatar.jpg', 'judge07', 'judge07', NULL, NULL, NULL, '2024-05-13 13:49:30', '2024-05-13 13:49:30');
+(7, 7, 'Judge 07', 'no-avatar.jpg', 'judge07', 'judge07', NULL, NULL, NULL, '2024-05-13 13:49:30', '2024-05-13 13:49:30'),
+(8, 8, 'Judge 08', 'no-avatar.jpg', 'judge08', 'judge08', NULL, NULL, NULL, '2024-05-21 05:57:36', '2024-05-21 05:57:36');
 
 -- --------------------------------------------------------
 
@@ -345,7 +346,13 @@ INSERT INTO `judge_event` (`id`, `judge_id`, `event_id`, `is_chairman`, `active_
 (39, 7, 3, 0, 1, 0, '2024-05-13 13:54:10', '2024-05-13 15:48:14'),
 (40, 7, 4, 0, 1, 0, '2024-05-13 13:54:13', '2024-05-13 15:48:20'),
 (41, 7, 5, 0, 1, 0, '2024-05-13 13:54:16', '2024-05-13 15:48:23'),
-(42, 7, 6, 0, 1, 0, '2024-05-13 13:54:19', '2024-05-13 15:48:26');
+(42, 7, 6, 0, 1, 0, '2024-05-13 13:54:19', '2024-05-13 15:48:26'),
+(43, 8, 1, 0, 1, 0, '2024-05-21 05:57:45', '2024-05-21 05:57:45'),
+(44, 8, 2, 0, 1, 0, '2024-05-21 05:57:49', '2024-05-21 05:57:49'),
+(45, 8, 3, 0, 1, 0, '2024-05-21 05:57:53', '2024-05-21 05:57:53'),
+(46, 8, 4, 0, 1, 0, '2024-05-21 05:57:57', '2024-05-21 05:57:57'),
+(47, 8, 5, 0, 1, 0, '2024-05-21 05:58:01', '2024-05-21 05:58:01'),
+(48, 8, 6, 0, 1, 0, '2024-05-21 05:58:04', '2024-05-21 05:58:04');
 
 -- --------------------------------------------------------
 
@@ -434,26 +441,26 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `number`, `name`, `location`, `avatar`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Neoli Kryss Abarientos', 'Nabua, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:40:28', '2024-05-13 13:40:28'),
-(2, 2, 'Johanna Leann C. Recuenco', 'Nabua, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:40:50', '2024-05-13 13:40:50'),
-(3, 3, 'Angelica Necio Maximo', 'Polangui, Albay', 'no-avatar.jpg', '2024-05-13 13:41:15', '2024-05-13 13:41:15'),
-(4, 4, 'Mien Mie R. Egipto', 'Iriga City', 'no-avatar.jpg', '2024-05-13 13:41:44', '2024-05-13 13:41:44'),
-(5, 5, 'Bettina Pauline Luceña Francia', 'Iriga City', 'no-avatar.jpg', '2024-05-13 13:42:17', '2024-05-13 13:42:17'),
-(6, 6, 'Sophia Kim Cornejo Ani', 'Balatan, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:42:43', '2024-05-13 13:42:43'),
-(7, 7, 'Marifranz S. Rico', 'Goa, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:43:04', '2024-05-13 13:43:04'),
-(8, 8, 'Cherry Love Jebulan', 'Sorsogon City', 'no-avatar.jpg', '2024-05-13 13:43:20', '2024-05-13 13:43:20'),
-(9, 9, 'Audrey Alexandra B. Villa', 'Baao, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:43:39', '2024-05-13 13:43:39'),
-(10, 10, 'Princess Lisie S. Mabag', 'Polangui, Albay', 'no-avatar.jpg', '2024-05-13 13:43:56', '2024-05-13 13:43:56'),
-(11, 11, 'Ginn Lianna Fiona Orcine', 'Bato, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:44:39', '2024-05-13 13:44:39'),
-(12, 12, 'Hannah Mae T. Panibe', 'Calabanga, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:45:10', '2024-05-13 13:45:10'),
-(13, 13, 'Euricka Lyn Moraña', 'Nabua, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:45:36', '2024-05-13 13:45:36'),
-(14, 14, 'Sarah Fayiz B. Qaimah', 'Buhi, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:46:08', '2024-05-13 13:46:08'),
-(15, 15, 'Nicole Joycean Peñaserada', 'Buhi, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:46:46', '2024-05-13 13:46:46'),
-(16, 16, 'Sherrie Mae P. Romaraog', 'Iriga City', 'no-avatar.jpg', '2024-05-13 13:47:05', '2024-05-13 13:47:05'),
-(17, 17, 'Mickha Ella S. Comoda', 'Goa, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:47:29', '2024-05-13 13:47:29'),
-(18, 18, 'Ivy Dianne I. De Vera', 'Milaor, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:47:49', '2024-05-13 13:47:49'),
-(19, 19, 'Melclen Joy S. Corporal', 'Pili, Cam. Sur', 'no-avatar.jpg', '2024-05-13 13:48:24', '2024-05-13 13:48:24'),
-(20, 20, 'Mickaela Janelle S. Dura', 'Polangui, Albay', 'no-avatar.jpg', '2024-05-13 13:48:48', '2024-05-13 13:48:48');
+(1, 1, 'Neoli Kryss Abarientos', 'Nabua, Cam. Sur', '01-neoli-kryss-angeline-abarientos.jpg', '2024-05-13 13:40:28', '2024-05-21 06:01:49'),
+(2, 2, 'Johanna Leann C. Recuenco', 'Nabua, Cam. Sur', '02-johanna-leeann-c-recuenco.jpg', '2024-05-13 13:40:50', '2024-05-21 06:01:54'),
+(3, 3, 'Angelica Necio Maximo', 'Polangui, Albay', '03-angelica-necio-maximo.jpg', '2024-05-13 13:41:15', '2024-05-21 06:02:01'),
+(4, 4, 'Mien Mie R. Egipto', 'Iriga City', '04-mien-mie-egipto.jpg', '2024-05-13 13:41:44', '2024-05-21 06:02:04'),
+(5, 5, 'Bettina Pauline Luceña Francia', 'Iriga City', '05-bettina-pauline-lucena-francia.jpg', '2024-05-13 13:42:17', '2024-05-21 06:02:06'),
+(6, 6, 'Sophia Kim Cornejo Ani', 'Balatan, Cam. Sur', '06-sophia-kim-cornejo-ani.jpg', '2024-05-13 13:42:43', '2024-05-21 06:02:10'),
+(7, 7, 'Marifranz S. Rico', 'Goa, Cam. Sur', '07-marifranz-s-rico.jpg', '2024-05-13 13:43:04', '2024-05-21 06:02:14'),
+(8, 8, 'Cherry Love Jebulan', 'Sorsogon City', '08-cherry-love-jebulan.jpg', '2024-05-13 13:43:20', '2024-05-21 06:02:17'),
+(9, 9, 'Audrey Alexandra B. Villa', 'Baao, Cam. Sur', '09-audrey-alexandra-b-villa.jpg', '2024-05-13 13:43:39', '2024-05-21 06:02:22'),
+(10, 10, 'Princess Lisie S. Mabag', 'Polangui, Albay', '10-princess-lisie-s-mabag.jpg', '2024-05-13 13:43:56', '2024-05-21 06:02:26'),
+(11, 11, 'Ginn Lianna Fiona Orcine', 'Bato, Cam. Sur', '11-ginn-lianna-fiona-orcine.jpg', '2024-05-13 13:44:39', '2024-05-21 06:02:32'),
+(12, 12, 'Hannah Mae T. Panibe', 'Calabanga, Cam. Sur', '12-hannah-mae-t-panibe.jpg', '2024-05-13 13:45:10', '2024-05-21 06:02:35'),
+(13, 13, 'Euricka Lyn Moraña', 'Nabua, Cam. Sur', '13-euricka-lyn-morana.jpg', '2024-05-13 13:45:36', '2024-05-21 06:02:38'),
+(14, 14, 'Sarah Fayiz B. Qaimah', 'Buhi, Cam. Sur', '14-sarah-fayiz-b-qaimah.jpg', '2024-05-13 13:46:08', '2024-05-21 06:02:41'),
+(15, 15, 'Nicole Joycean Peñaserada', 'Buhi, Cam. Sur', '15-nicole-joycean-penaserada.jpg', '2024-05-13 13:46:46', '2024-05-21 06:02:44'),
+(16, 16, 'Sherrie Mae P. Romaraog', 'Iriga City', '16-sherrie-mae-p-romaraog.jpg', '2024-05-13 13:47:05', '2024-05-21 06:02:48'),
+(17, 17, 'Mickha Ella S. Comoda', 'Goa, Cam. Sur', '17-mickha-ella-s-comoda.jpg', '2024-05-13 13:47:29', '2024-05-21 06:02:51'),
+(18, 18, 'Ivy Dianne I. De Vera', 'Milaor, Cam. Sur', '18-ivy-dianne-i-de-vera.jpg', '2024-05-13 13:47:49', '2024-05-21 06:02:55'),
+(19, 19, 'Melclen Joy S. Corporal', 'Pili, Cam. Sur', '19-melclen-joy-s-corporal.jpg', '2024-05-13 13:48:24', '2024-05-21 06:02:58'),
+(20, 20, 'Mickaela Janelle S. Dura', 'Polangui, Albay', '20-mickaela-janelle-s-dura.jpg', '2024-05-13 13:48:48', '2024-05-21 06:03:03');
 
 -- --------------------------------------------------------
 
@@ -725,13 +732,13 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `judges`
 --
 ALTER TABLE `judges`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `judge_event`
 --
 ALTER TABLE `judge_event`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `noshows`
