@@ -11,13 +11,13 @@ require_once '../../models/Judge.php';
 // involved events
 const EVENTS = [
     [
-        'slug'    => 'final-qa',
+        'slug'    => 'preliminary-qa',
         'percent' => 100
     ]
 ];
 
 // initialize titles
-$titles = ['Miss Buhi 2024', 'Miss Buhi-Bicol Tourism 2024', 'Miss Buhi-Bicolandia 2024', '1st Runner-Up', '2nd Runner-Up',];
+$titles = ['1', '2', '3', '4', '5'];
 
 // initialize admin
 $admin = new Admin();
@@ -270,7 +270,7 @@ foreach ($judges as $judge) {
             border-left: 2px solid #aaa !important;
         }
     </style>
-    <title>Top <?= sizeof($titles) ?> | <?= $competition_title ?> Finalists </title>
+    <title>Top <?= sizeof($titles) ?> | <?= $competition_title ?> Semi-Finalists </title>
 </head>
 <body>
 <?php if (!empty($judgesWithUnlockedRatings)) { ?>
@@ -294,7 +294,7 @@ foreach ($judges as $judge) {
         <thead class="bt">
         <tr class="table-secondary">
             <th colspan="3" rowspan="3" class="text-center bt br bl bb">
-                <h1 class="m-0">TOP <?= sizeof($titles) ?> Finalists</h1>
+                <h1 class="m-0">TOP <?= sizeof($titles) ?> Semi-Finalists</h1>
                 <h5><?= $competition_title ?></h5>
             </th>
             <?php for($i=0; $i<sizeof($events); $i++) { ?>
@@ -417,7 +417,7 @@ foreach ($judges as $judge) {
         </div>
     </div>
 
-    <!-- Summary of Winners in Random -->
+    <!-- Summary -->
     <div class="container-fluid mt-5" style="page-break-before: always;">
         <div class="row justify-content-center">
             <div class="col-md-12" align="center">
@@ -426,7 +426,7 @@ foreach ($judges as $judge) {
 
             <!-- unordered -->
             <div class="col-md-6" align="center">
-                <h1><b>TOP <?= sizeof($titles)?></b> Finalists in <b class="text-danger">Random</b> Order</h1>
+                <h1><b>TOP <?= sizeof($titles) ?></b> Semi-Finalists in <b class="text-danger">Random</b> Order</h1>
                 <h4>FOR ANNOUNCEMENT</h4>
                 <div class="mt-4" style="width: 80%;">
                     <table class="table table-bordered mt-3">
@@ -441,24 +441,23 @@ foreach ($judges as $judge) {
                                     <!-- number -->
                                     <td class="fw-bold text-center">
                                         <h2 class="m-0 fw-bold">
-                                            <?= $team['info']['number']?>
+                                            <?= $team['info']['number'] ?>
                                         </h2>
                                     </td>
 
                                     <!-- avatar -->
                                     <td style="width: 88px;">
                                         <img
-                                                src="../../crud/uploads/<?= $team['info']['avatar']?>"
-                                                alt="<?= $team['info']['number']?>"
+                                                src="../../crud/uploads/<?= $team['info']['avatar'] ?>"
+                                                alt="<?= $team['info']['number'] ?>"
                                                 style="width: 100%; border-radius: 100%"
                                         >
                                     </td>
 
                                     <!-- name -->
                                     <td>
-                                        <h3 class="font-weight-bold"><?= $team['title']?></h3>
-                                        <h6 class="text-uppercase m-0"><?= $team['info']['name']?></h6>
-                                        <small class="m-0"><?= $team['info']['location']?></small>
+                                        <h6 class="text-uppercase m-0"><?= $team['info']['name'] ?></h6>
+                                        <small class="m-0"><?= $team['info']['location'] ?></small>
                                     </td>
                                 </tr>
                                 <?php
@@ -470,57 +469,54 @@ foreach ($judges as $judge) {
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Summary of Winners From Last Rank -->
-    <div class="container-fluid justify-content-center" style="page-break-before: always;">
-        <div class="col-md-12" align="center">
-            <img src="../../crud/uploads/competition.png" style="width: 256px;" alt="Event">
-        </div>
-        <div class="col-md-6 offset-md-3" align="center">
-            <div style="width: 50%;">
-                <table class="table table-bordered mt-3">
-                    <thead>
-                    <tr>
-                        <th colspan="3" class="text-center" style="border-width: 0; border-style: hidden">
-                            <h1 class="font-weight-bold"><?= $competition_title ?> Winners</h1>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    for ($i = count($titles) - 1; $i >= 0; $i--) {
-                        $title = $titles[$i];
-                        foreach ($result as $team_key => $team) {
-                            if ($team['title'] === $title) {
+        <div class="row justify-content-center" style="page-break-before: always;">
+            <div class="col-md-12" align="center">
+                <img src="../../crud/uploads/competition.png" style="width: 256px;" alt="Event">
+            </div>
+
+            <!-- ordered -->
+            <div class="col-md-6" align="center">
+                <h1><b>TOP <?= sizeof($titles) ?></b> Semi-Finalists in <b class="text-success">Proper</b> Order</h1>
+                <div class="mt-4" style="width: 80%;">
+                    <table class="table table-bordered mt-3">
+                        <tbody>
+                        <?php
+                        foreach($tops_ordered as $team_id) {
+                            $team_key = 'team_'.$team_id;
+                            if (isset($result[$team_key])) {
+                                $team = $result[$team_key];
                                 ?>
                                 <tr>
-                                    <td colspan="3" align="center" style="border-right: 0; border-left: 0; margin-top: 20px; margin-bottom: 20px">
-                                        <h2 class="font-weight-bolder mt-5 mb-2"><?= $title ?></h2>
+                                    <!-- number -->
+                                    <td class="fw-bold text-center">
+                                        <h2 class="m-0 fw-bold">
+                                            <?= $team['info']['number'] ?>
+                                        </h2>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <!-- Number -->
-                                    <td class="pe-3 fw-bold text-center">
-                                        <h3 class="m-0"><?= $team['info']['number'] ?></h3>
+
+                                    <!-- avatar -->
+                                    <td style="width: 88px;">
+                                        <img
+                                                src="../../crud/uploads/<?= $team['info']['avatar'] ?>"
+                                                alt="<?= $team['info']['number'] ?>"
+                                                style="width: 100%; border-radius: 100%"
+                                        >
                                     </td>
-                                    <!-- Avatar -->
-                                    <td style="width: 72px;">
-                                        <img src="../../crud/uploads/<?= $team['info']['avatar'] ?>" alt="<?= $team['info']['number'] ?>" style="width: 100%; border-radius: 100%">
-                                    </td>
-                                    <!-- Name and Title -->
-                                    <td style="padding-left: 20px; padding-right: 20px;">
-                                        <h5 class="text-uppercase m-0"><?= $team['info']['name'] ?></h5>
+
+                                    <!-- name -->
+                                    <td>
+                                        <h6 class="text-uppercase m-0"><?= $team['info']['name'] ?></h6>
                                         <small class="m-0"><?= $team['info']['location'] ?></small>
                                     </td>
                                 </tr>
                                 <?php
                             }
                         }
-                    }
-                    ?>
-                    </tbody>
-                </table>
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
