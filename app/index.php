@@ -66,7 +66,8 @@ $routes = [
     [ "name" => "Arrangements"    , "route" => "crud/orders"           ],
     [ "name" => "Titles"          , "route" => "crud/titles"           ],
     [ "name" => "Rating Sheets"   , "route" => "papers/rating-sheets"  ],
-    [ "name" => "Top 10"          , "route" => "results/top10"         ]
+    [ "name" => "Top 10"          , "route" => "results/top10"         ],
+    [ "name" => "Top 5"          , "route" => "results/top5"         ]
 ];
 ?>
 <!DOCTYPE html>
