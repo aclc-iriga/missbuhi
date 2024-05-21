@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2024 at 08:07 AM
+-- Generation Time: May 22, 2024 at 01:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -246,7 +246,7 @@ INSERT INTO `events` (`id`, `category_id`, `slug`, `title`, `created_at`, `updat
 (2, 2, 'production-number', 'Production Number', '2024-05-12 15:27:06', '2024-05-12 15:27:06'),
 (3, 2, 'swimsuit-competition', 'Swimsuit', '2024-05-12 15:27:33', '2024-05-12 15:27:33'),
 (4, 2, 'evening-gown-competition', 'Evening Gown', '2024-05-12 15:27:49', '2024-05-12 15:27:49'),
-(5, 2, 'qa', 'Q&A', '2024-05-12 15:31:15', '2024-05-12 15:31:15'),
+(5, 2, 'preliminary-qa', 'Preliminary Q&A', '2024-05-12 15:31:15', '2024-05-21 21:48:15'),
 (6, 2, 'final-qa', 'Final Q&A', '2024-05-12 15:31:29', '2024-05-12 15:31:29');
 
 -- --------------------------------------------------------
