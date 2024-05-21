@@ -412,8 +412,8 @@ shuffle($tops_unordered);
                         <?php
                         foreach($tops_unordered as $team_id) {
                             $team_key = 'team_'.$team_id;
-                            if (isset($results[$team_key])) {
-                                $team = $results[$team_key];
+                            if (isset($result[$team_key])) {
+                                $team = $result[$team_key];
                                 ?>
                                 <tr>
                                     <!-- number -->
@@ -448,7 +448,7 @@ shuffle($tops_unordered);
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="page-break-before: always;">
             <div class="col-md-12" align="center">
                 <img src="../../crud/uploads/competition.png" style="width: 256px;" alt="Event">
             </div>
@@ -462,8 +462,8 @@ shuffle($tops_unordered);
                         <?php
                         foreach($tops_ordered as $team_id) {
                             $team_key = 'team_'.$team_id;
-                            if (isset($results[$team_key])) {
-                                $team = $results[$team_key];
+                            if (isset($result[$team_key])) {
+                                $team = $result[$team_key];
                                 ?>
                                 <tr>
                                     <!-- number -->
